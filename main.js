@@ -76,9 +76,11 @@
 
     const textArray = [
       "Python Developer.",
-      "Flutter Specialist.",
-      "Multi-Disciplinary Developer.",
-      "Creative Problem Solver.",
+      "Flutter Developer.",
+      "Web Developer.",
+      "Linux Enthusiast.",
+      "Open Source Learner.",
+      "Creative Problem Solver."
     ];
     const typingDelay = 100;
     const erasingDelay = 50;
