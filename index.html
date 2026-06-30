@@ -1,318 +1,561 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- The language is set to English with a left-to-right direction. -->
 <html lang="en" dir="ltr" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- SEO: Core Meta Tags -->
     <title>Surena Projects | Expert Python & Flutter Developer</title>
-    <meta name="description" content="Portfolio of Hossein Rahimi, a multi-disciplinary developer specializing in Python, Dart/Flutter, and modern web technologies. Founder of Surena Projects, creating high-quality web, mobile, and desktop applications.">
-    <meta name="keywords" content="Hossein Rahimi, Surena Projects, Python Developer, Flutter Developer, Dart, JavaScript, Web Developer, Mobile App Developer, Portfolio">
-    <meta name="author" content="Hossein Rahimi, Surena Projects">
+    <meta
+      name="description"
+      content="Portfolio of Hossein Rahimi, a multi-disciplinary developer specializing in Python, Dart/Flutter, and modern web technologies. Founder of Surena Projects, creating high-quality web, mobile, and desktop applications."
+    />
+    <meta
+      name="keywords"
+      content="Hossein Rahimi, Surena Projects, Python Developer, Flutter Developer, Dart, JavaScript, Web Developer, Mobile App Developer, Portfolio"
+    />
+    <meta name="author" content="Hossein Rahimi, Surena Projects" />
 
     <!-- SEO: Open Graph Tags for Social Media Sharing -->
-    <meta property="og:title" content="Surena Projects | Expert Python & Flutter Developer">
-    <meta property="og:description" content="Discover the work of Hossein Rahimi, a developer passionate about building creative and high-quality solutions with Python and Flutter.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.surenaprojects.com"> <!-- Replace with your actual domain -->
-    <meta property="og:image" content="https://placehold.co/1200x630/0d1117/c9d1d9?text=Surena+Projects"> <!-- Replace with a link to a preview image -->
+    <meta
+      property="og:title"
+      content="Surena Projects | Expert Python & Flutter Developer"
+    />
+    <meta
+      property="og:description"
+      content="Discover the work of Hossein Rahimi, a developer passionate about building creative and high-quality solutions with Python and Flutter."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.surenaprojects.com" />
+    <!-- Replace with your actual domain -->
+    <meta
+      property="og:image"
+      content="https://placehold.co/1200x630/0d1117/c9d1d9?text=Surena+Projects"
+    />
+    <!-- Replace with a link to a preview image -->
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌟</text></svg>">
-    
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌟</text></svg>"
+    />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
     <!-- Performance: Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <!-- SEO: JSON-LD Structured Data for Rich Snippets -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Hossein Rahimi",
-      "url": "https://www.surenaprojects.com", <!-- Replace with your actual domain -->
-      "jobTitle": "Multi-Disciplinary Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Surena Projects"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/surenaprojects",
-        "https://github.com/surenaprojects"
-      ],
-      "knowsAbout": ["Python", "Dart", "Flutter", "JavaScript", "Software Development", "Logo Design"]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hossein Rahimi",
+        "url": "https://www.surenaprojects.com", <!-- Replace with your actual domain -->
+        "jobTitle": "Multi-Disciplinary Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Surena Projects"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/surenaprojects",
+          "https://github.com/surenaprojects"
+        ],
+        "knowsAbout": [
+          "Python",
+          "Dart",
+          "Flutter",
+          "JavaScript",
+          "Software Development",
+          "Logo Design"
+        ]
+      }
     </script>
-</head>
-<body class="antialiased">
-
+  </head>
+  <body class="antialiased">
     <!-- Responsive Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-black/30 backdrop-blur-lg shadow-lg border-b border-white/10">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <a href="#home" class="text-2xl font-bold text-blue-400 hover:text-blue-300 transition duration-300">
-                        Surena Projects
-                    </a>
-                </div>
-                <!-- Desktop Navigation Links -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
-                    <a href="#about" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
-                    <a href="#skills" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Skills</a>
-                    <a href="#projects" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Projects</a>
-                    <a href="#contact" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
-                </div>
-                
-                <!-- Mobile menu button (HAMBURGER) -->
-                <div class="flex items-center md:hidden">
-                    <button id="mobile-menu-button" class="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open mobile menu">
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </nav>
+    <header
+      class="sticky top-0 z-50 bg-black/30 backdrop-blur-lg shadow-lg border-b border-white/10"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <a
+              href="#home"
+              class="text-2xl font-bold text-blue-400 hover:text-blue-300 transition duration-300"
+            >
+              Surena Projects
+            </a>
+          </div>
+          <!-- Desktop Navigation Links -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#home"
+              class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
+              >Projects</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Mobile menu button (HAMBURGER) -->
+          <div class="flex items-center md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              aria-label="Open mobile menu"
+            >
+              <svg
+                class="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <!-- Mobile menu -->
+      <div class="md:hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+          <a
+            href="#home"
+            class="mobile-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="mobile-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="mobile-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="mobile-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="mobile-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Contact</a
+          >
         </div>
-        <!-- Mobile menu -->
-        <div class="md:hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
-                <a href="#home" class="mobile-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="#about" class="mobile-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="#skills" class="mobile-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
-                <a href="#projects" class="mobile-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                <a href="#contact" class="mobile-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-            </div>
-        </div>
+      </div>
     </header>
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="min-h-[80vh] flex items-center justify-center text-center pt-24 pb-12"
+      >
+        <div class="max-w-4xl mx-auto scroll-reveal">
+          <h1
+            class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-white"
+          >
+            Hello! I'm
+            <span class="hero-title-effect text-blue-400">Hossein Rahimi</span>
+          </h1>
+          <h2 class="text-2xl sm:text-3xl text-gray-300 mb-4 font-medium">
+            Founder of the
+            <span class="hero-title-effect text-blue-400">Surena Projects</span>
+          </h2>
+          <p class="text-xl sm:text-2xl text-gray-400 mb-8 h-16">
+            I'm a
+            <span id="typed-text" class="text-green-400 font-semibold"></span
+            ><span class="typing-cursor"></span>
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="#projects"
+              class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-xl text-white bg-blue-600 hover:bg-blue-700 transition duration-300 transform hover:scale-105"
+            >
+              View Projects ✨
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-600 text-base font-medium rounded-full shadow-lg text-gray-300 bg-gray-800 hover:bg-gray-700 transition duration-300 transform hover:scale-105"
+            >
+              Contact Me 📞
+            </a>
+          </div>
+        </div>
+      </section>
 
-        <!-- Hero Section -->
-        <section id="home" class="min-h-[80vh] flex items-center justify-center text-center pt-24 pb-12">
-            <div class="max-w-4xl mx-auto scroll-reveal">
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-white">
-                    Hello! I'm <span class="hero-title-effect text-blue-400">Hossein Rahimi</span>
-                </h1>
-                <h2 class="text-2xl sm:text-3xl text-gray-300 mb-4 font-medium">
-                    Founder of the <span class="hero-title-effect text-blue-400">Surena Projects</span>
-                </h2>
-                <p class="text-xl sm:text-2xl text-gray-400 mb-8 h-16">
-                    I'm a <span id="typed-text" class="text-green-400 font-semibold"></span><span class="typing-cursor"></span>
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-xl text-white bg-blue-600 hover:bg-blue-700 transition duration-300 transform hover:scale-105">
-                        View Projects ✨
-                    </a>
-                    <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-600 text-base font-medium rounded-full shadow-lg text-gray-300 bg-gray-800 hover:bg-gray-700 transition duration-300 transform hover:scale-105">
-                        Contact Me 📞
-                    </a>
-                </div>
+      <hr class="divider" />
+
+      <!-- About Me Section -->
+      <section id="about" class="py-16">
+        <div class="max-w-3xl mx-auto scroll-reveal">
+          <h2 class="text-4xl font-bold text-center text-white mb-10">
+            About Me 👋
+          </h2>
+          <div
+            class="bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700 transition duration-500 hover:shadow-blue-500/50"
+          >
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              I am a highly curious individual with a strong passion for
+              <span class="font-semibold text-red-400">Coding</span>,
+              <span class="font-semibold text-yellow-400">Reading</span>, and
+              <span class="font-semibold text-blue-400">Bodybuilding</span>.
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              In the world of technology, my main focus is on
+              <strong>Python</strong>, <strong>Dart</strong>, and
+              <strong>JavaScript</strong>. Besides software development, I am
+              interested in <strong>Cryptocurrencies</strong> and
+              <strong>Professional Logo Design</strong>, and I am always
+              learning new concepts.
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed">
+              Nowadays, I am enthusiastically working with the
+              <strong>Linux</strong> operating system, and at the same time, I
+              am trying to strengthen my <strong>English</strong> language
+              skills. My goal is to build creative and high-quality solutions.
+            </p>
+            <div class="mt-8 text-center text-3xl">💻🏋️‍♂️📚💡</div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-16">
+        <h2
+          class="text-4xl font-bold text-center text-white mb-12 scroll-reveal"
+        >
+          My Core Skills 🧠
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div
+            class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-blue-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1"
+          >
+            <span class="text-5xl mb-3 block"
+              ><i class="fa-brands fa-python"></i
+            ></span>
+            <h3 class="text-xl font-semibold text-white mb-1">Python</h3>
+            <p class="text-sm text-gray-400">Backend & Data Analysis</p>
+          </div>
+
+          <div
+            class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-cyan-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-100"
+          >
+            <span class="text-5xl mb-3 block">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                class="w-20 h-20 mx-auto"
+              >
+                <path
+                  d="M525.5 300.3L387.7 438.1L525.5 576L368 576C331.9 539.9 285.9 493.9 230.1 438.1L368 300.3L525.5 300.3zM368 64L112 320L190.8 398.8L525.5 64L368 64z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <h3 class="text-xl font-semibold text-white mb-1">
+              Dart / Flutter
+            </h3>
+            <p class="text-sm text-gray-400">Cross-platform Mobile Apps</p>
+          </div>
+
+          <div
+            class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-yellow-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-200"
+          >
+            <span class="text-5xl mb-3 block"
+              ><i class="fab fa-js-square"></i
+            ></span>
+            <h3 class="text-xl font-semibold text-white mb-1">JavaScript</h3>
+            <p class="text-sm text-gray-400">Interactive Frontend Web</p>
+          </div>
+
+          <div
+            class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-purple-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-300"
+          >
+            <span class="text-5xl mb-3 block"
+              ><i class="fa-solid fa-palette"></i
+            ></span>
+            <h3 class="text-xl font-semibold text-white mb-1">Logo Design</h3>
+            <p class="text-sm text-gray-400">Visual & Brand Identity</p>
+          </div>
+
+          <div class="scroll-reveal linux-card">
+            <span class="icon"><i class="fa-brands fa-linux"></i></span>
+            <h3>Linux</h3>
+            <p>Dev Environment & CLI</p>
+          </div>
+          <div
+            class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-orange-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-100"
+          >
+            <span class="text-5xl mb-3 block"
+              ><i class="fa-solid fa-globe"></i
+            ></span>
+            <h3 class="text-xl font-semibold text-white mb-1">Tailwind CSS</h3>
+            <p class="text-sm text-gray-400">Rapid & Responsive UI</p>
+          </div>
+          <div
+            class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-red-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-200"
+          >
+            <span class="text-5xl mb-3 block"
+              ><i class="fa-solid fa-dollar-sign"></i
+            ></span>
+            <h3 class="text-xl font-semibold text-white mb-1">
+              Cryptocurrency
+            </h3>
+            <p class="text-sm text-gray-400">Blockchain & Web3</p>
+          </div>
+          <div
+            class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-indigo-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-300"
+          >
+            <span class="text-5xl mb-3 block"
+              ><i class="fa-solid fa-star"></i
+            ></span>
+            <h3 class="text-xl font-semibold text-white mb-1">
+              Problem Solving
+            </h3>
+            <p class="text-sm text-gray-400">Logical & Creative Solutions</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- Projects Section -->
+      <!-- Projects Section -->
+      <section id="projects" class="py-16">
+        <h2
+          class="text-4xl font-bold text-center text-white mb-12 scroll-reveal"
+        >
+          Recent Projects 💻
+        </h2>
+
+        <div
+          id="projects-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
+          <!-- GitHub projects will be loaded here automatically -->
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-16">
+        <h2
+          class="text-4xl font-bold text-center text-white mb-12 scroll-reveal"
+        >
+          Get in Touch 📧
+        </h2>
+        <div class="max-w-xl mx-auto">
+          <div
+            class="bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl scroll-reveal border border-gray-700"
+          >
+            <form
+              action="https://formspree.io/f/mrbykrba"
+              method="POST"
+              class="space-y-6"
+            >
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-300 mb-1"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                  placeholder="E.g., John Doe"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-300 mb-1"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                  placeholder="example@domain.com"
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-300 mb-1"
+                  >Your Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                  placeholder="Write your project description or question here..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full py-3 px-4 border border-transparent rounded-lg shadow-xl text-lg font-semibold text-white bg-green-600 hover:bg-green-700 transition duration-300 transform hover:scale-[1.01]"
+              >
+                Send Message 📨
+              </button>
+            </form>
+
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+              <p class="text-gray-400 mb-4">Or connect with me on:</p>
+              <div class="flex justify-center space-x-6 text-gray-400">
+                <a
+                  href="https://www.linkedin.com/in/surenaprojects"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  class="hover:text-blue-400 transition duration-300"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/surenaprojects"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
+                  class="hover:text-white transition duration-300"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="mailto:surenaprojects@gmail.com"
+                  aria-label="Email Me"
+                  class="hover:text-red-400 transition duration-300"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- About Me Section -->
-        <section id="about" class="py-16">
-            <div class="max-w-3xl mx-auto scroll-reveal">
-                <h2 class="text-4xl font-bold text-center text-white mb-10">About Me 👋</h2>
-                <div class="bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700 transition duration-500 hover:shadow-blue-500/50">
-                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                        I am a highly curious individual with a strong passion for <span class="font-semibold text-red-400">Coding</span>, <span class="font-semibold text-yellow-400">Reading</span>, and <span class="font-semibold text-blue-400">Bodybuilding</span>.
-                    </p>
-                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                        In the world of technology, my main focus is on <Strong>Python</Strong>, <strong>Dart</strong>, and <strong>JavaScript</strong>. Besides software development, I am interested in <Strong>Cryptocurrencies</Strong> and <strong>Professional Logo Design</strong>, and I am always learning new concepts.
-                    </p>
-                    <p class="text-lg text-gray-300 leading-relaxed">
-                        Nowadays, I am enthusiastically working with the <strong>Linux</strong> operating system, and at the same time, I am trying to strengthen my <strong>English</strong> language skills. My goal is to build creative and high-quality solutions.
-                    </p>
-                    <div class="mt-8 text-center text-3xl">
-                        💻🏋️‍♂️📚💡
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-16">
-            <h2 class="text-4xl font-bold text-center text-white mb-12 scroll-reveal">My Core Skills 🧠</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                
-                <div class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-blue-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1">
-                    <span class="text-5xl mb-3 block"><i class="fa-brands fa-python"></i></span>
-                    <h3 class="text-xl font-semibold text-white mb-1">Python</h3>
-                    <p class="text-sm text-gray-400">Backend & Data Analysis</p>
-                </div>
-
-                <div class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-cyan-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-100">
-                    <span class="text-5xl mb-3 block">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-20 h-20 mx-auto">
-                            <path d="M525.5 300.3L387.7 438.1L525.5 576L368 576C331.9 539.9 285.9 493.9 230.1 438.1L368 300.3L525.5 300.3zM368 64L112 320L190.8 398.8L525.5 64L368 64z" fill="currentColor" />
-                        </svg>
-                    </span>
-                    <h3 class="text-xl font-semibold text-white mb-1">Dart / Flutter</h3>
-                    <p class="text-sm text-gray-400">Cross-platform Mobile Apps</p>
-                </div>
-
-                <div class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-yellow-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-200">
-                    <span class="text-5xl mb-3 block"><i class="fab fa-js-square"></i></span>
-                    <h3 class="text-xl font-semibold text-white mb-1">JavaScript</h3>
-                    <p class="text-sm text-gray-400">Interactive Frontend Web</p>
-                </div>
-
-                <div class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-purple-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-300">
-                    <span class="text-5xl mb-3 block"><i class="fa-solid fa-palette"></i></span>
-                    <h3 class="text-xl font-semibold text-white mb-1">Logo Design</h3>
-                    <p class="text-sm text-gray-400">Visual & Brand Identity</p>
-                </div>
-
-                <div class="scroll-reveal linux-card">
-                    <span class="icon"><i class="fa-brands fa-linux"></i></span>
-                    <h3>Linux</h3>
-                    <p>Dev Environment & CLI</p>
-                </div>
-                <div class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-orange-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-100">
-                    <span class="text-5xl mb-3 block"><i class="fa-solid fa-globe"></i></span>
-                    <h3 class="text-xl font-semibold text-white mb-1">Tailwind CSS</h3>
-                    <p class="text-sm text-gray-400">Rapid & Responsive UI</p>
-                </div>
-                <div class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-red-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-200">
-                    <span class="text-5xl mb-3 block"><i class="fa-solid fa-dollar-sign"></i></span>
-                    <h3 class="text-xl font-semibold text-white mb-1">Cryptocurrency</h3>
-                    <p class="text-sm text-gray-400">Blockchain & Web3</p>
-                </div>
-                <div class="scroll-reveal bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center border-b-4 border-indigo-500 hover:bg-gray-700/80 transition duration-300 transform hover:-translate-y-1 transition-delay-300">
-                    <span class="text-5xl mb-3 block"><i class="fa-solid fa-star"></i></span>
-                    <h3 class="text-xl font-semibold text-white mb-1">Problem Solving</h3>
-                    <p class="text-sm text-gray-400">Logical & Creative Solutions</p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-16">
-            <h2 class="text-4xl font-bold text-center text-white mb-12 scroll-reveal">Recent Projects 💻</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                
-                <div class="scroll-reveal bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-cyan-400/50 transform hover:-translate-y-1">
-                    <div class="p-6">
-                        <span class="text-4xl block mb-4">📱</span>
-                        <h3 class="text-2xl font-semibold text-cyan-400 mb-2">Task Management App</h3>
-                        <p class="text-gray-400 mb-4 text-sm">A complete mobile application for iOS and Android, built with Flutter, for seamless task management, deadlines, and notifications.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-3 py-1 rounded-full">Dart</span>
-                            <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-3 py-1 rounded-full">Flutter</span>
-                        </div>
-                        <a href="#" class="mt-4 inline-block text-sm text-cyan-400 hover:underline">View Details →</a>
-                    </div>
-                </div>
-
-                <div class="scroll-reveal bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-blue-400/50 transform hover:-translate-y-1 transition-delay-100">
-                    <div class="p-6">
-                        <span class="text-4xl block mb-4">🤖</span>
-                        <h3 class="text-2xl font-semibold text-blue-400 mb-2">Python Backend API</h3>
-                        <p class="text-gray-400 mb-4 text-sm">A robust, scalable REST API using Python and the FastAPI framework for managing user authentication and data processing.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-900 text-blue-300 text-xs font-medium px-3 py-1 rounded-full">Python</span>
-                            <span class="bg-blue-900 text-blue-300 text-xs font-medium px-3 py-1 rounded-full">FastAPI</span>
-                        </div>
-                        <a href="#" class="mt-4 inline-block text-sm text-blue-400 hover:underline">View Details →</a>
-                    </div>
-                </div>
-
-                <div class="scroll-reveal bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-yellow-400/50 transform hover:-translate-y-1 transition-delay-200">
-                    <div class="p-6">
-                        <span class="text-4xl block mb-4">🕹️</span>
-                        <h3 class="text-2xl font-semibold text-yellow-400 mb-2">Interactive Web Game</h3>
-                        <p class="text-gray-400 mb-4 text-sm">An interactive web-based game built with vanilla JavaScript and HTML Canvas to demonstrate frontend logic and animation skills.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-yellow-900 text-yellow-300 text-xs font-medium px-3 py-1 rounded-full">JavaScript</span>
-                            <span class="bg-yellow-900 text-yellow-300 text-xs font-medium px-3 py-1 rounded-full">HTML/CSS</span>
-                        </div>
-                        <a href="#" class="mt-4 inline-block text-sm text-yellow-400 hover:underline">View Details →</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-16">
-            <h2 class="text-4xl font-bold text-center text-white mb-12 scroll-reveal">Get in Touch 📧</h2>
-            <div class="max-w-xl mx-auto">
-                <div class="bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl scroll-reveal border border-gray-700">
-                    <form action="https://formspree.io/f/mrbykrba" method="POST" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500 transition duration-300" placeholder="E.g., John Doe">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500 transition duration-300" placeholder="example@domain.com">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Your Message</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500 transition duration-300" placeholder="Write your project description or question here..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-3 px-4 border border-transparent rounded-lg shadow-xl text-lg font-semibold text-white bg-green-600 hover:bg-green-700 transition duration-300 transform hover:scale-[1.01]">
-                            Send Message 📨
-                        </button>
-                    </form>
-
-                    <div class="mt-8 pt-6 border-t border-gray-700 text-center">
-                        <p class="text-gray-400 mb-4">Or connect with me on:</p>
-                        <div class="flex justify-center space-x-6 text-gray-400">
-                            <a href="https://www.linkedin.com/in/surenaprojects" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="hover:text-blue-400 transition duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                            </a>
-                            <a href="https://github.com/surenaprojects" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="hover:text-white transition duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            </a>
-                            <a href="mailto:surenaprojects@gmail.com" aria-label="Email Me" class="hover:text-red-400 transition duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="bg-gray-900 border-t border-gray-800 mt-12 py-6">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
-            <p>&copy; <span id="copyright-year"></span> Surena Projects. All Rights Reserved.</p>
-        </div>
+      <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm"
+      >
+        <p>
+          &copy; <span id="copyright-year"></span> Surena Projects. All Rights
+          Reserved.
+        </p>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
     <button id="back-to-top" title="Back to Top">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-        </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4.5 15.75l7.5-7.5 7.5 7.5"
+        />
+      </svg>
     </button>
-    
+
     <!-- Custom JavaScript -->
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
