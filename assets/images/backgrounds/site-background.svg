@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Base "board" gradient, matching the site's bg / bg-elevated tokens -->
+    <linearGradient id="bgBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f18"/>
+      <stop offset="55%" stop-color="#080b12"/>
+      <stop offset="100%" stop-color="#0a0e1a"/>
+    </linearGradient>
+
+    <radialGradient id="violetGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c6fe8" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#7c6fe8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d9c0" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00d9c0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="amberGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffb454" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ffb454" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="vignette" cx="50%" cy="46%" r="75%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#04060a" stop-opacity="0.75"/>
+    </radialGradient>
+
+    <radialGradient id="centerCalm" cx="50%" cy="52%" r="42%">
+      <stop offset="0%" stop-color="#080b12" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#080b12" stop-opacity="0"/>
+    </radialGradient>
+
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#00d9c0" stroke-opacity="0.12" stroke-width="1"/>
+    </pattern>
+
+    <pattern id="scan" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect width="3" height="1.4" fill="#000000" fill-opacity="0.06"/>
+    </pattern>
+
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="bigBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <!-- ============ BASE ============ -->
+  <rect width="1920" height="1080" fill="url(#bgBase)"/>
+
+  <!-- ============ AURORA FIELDS ============ -->
+  <g filter="url(#bigBlur)">
+    <ellipse cx="300" cy="180" rx="520" ry="380" fill="url(#violetGlow)"/>
+    <ellipse cx="1650" cy="260" rx="560" ry="420" fill="url(#cyanGlow)"/>
+    <ellipse cx="980" cy="980" rx="620" ry="360" fill="url(#amberGlow)"/>
+  </g>
+
+  <!-- ============ GRID TEXTURE ============ -->
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+
+  <!-- keep the visual center a little calmer so overlaid headline text
+       (as used on the real site) stays comfortably legible -->
+  <rect width="1920" height="1080" fill="url(#centerCalm)"/>
+
+  <!-- ============ CIRCUIT TRACES ============ -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)">
+    <path d="M 60 140 H 260 V 320 H 480 V 210 H 720" stroke="#00d9c0" stroke-width="2" stroke-opacity="0.55"/>
+    <path d="M 120 900 H 340 V 760 H 560 V 860 H 860" stroke="#7c6fe8" stroke-width="2" stroke-opacity="0.5"/>
+    <path d="M 1860 160 H 1620 V 340 H 1400 V 230 H 1180" stroke="#00d9c0" stroke-width="2" stroke-opacity="0.5"/>
+    <path d="M 1820 940 H 1600 V 780 H 1360 V 900 H 1140" stroke="#ffb454" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 40 520 H 200 V 610 H 340" stroke="#7c6fe8" stroke-width="1.6" stroke-opacity="0.4"/>
+    <path d="M 1880 560 H 1720 V 480 H 1580" stroke="#00d9c0" stroke-width="1.6" stroke-opacity="0.4"/>
+    <path d="M 760 60 V 160 H 900" stroke="#ffb454" stroke-width="1.6" stroke-opacity="0.4"/>
+    <path d="M 1100 1020 V 900 H 980" stroke="#00d9c0" stroke-width="1.6" stroke-opacity="0.4"/>
+  </g>
+
+  <!-- circuit "vias" / nodes along the traces -->
+  <g fill="#00d9c0" opacity="0.75">
+    <circle cx="260" cy="140" r="4"/>
+    <circle cx="480" cy="320" r="4"/>
+    <circle cx="720" cy="210" r="4"/>
+    <circle cx="1620" cy="160" r="4"/>
+    <circle cx="1400" cy="340" r="4"/>
+    <circle cx="1180" cy="230" r="4"/>
+  </g>
+  <g fill="#7c6fe8" opacity="0.75">
+    <circle cx="340" cy="900" r="4"/>
+    <circle cx="560" cy="760" r="4"/>
+    <circle cx="860" cy="860" r="4"/>
+    <circle cx="200" cy="520" r="3.2"/>
+    <circle cx="340" cy="610" r="3.2"/>
+  </g>
+  <g fill="#ffb454" opacity="0.7">
+    <circle cx="1600" cy="940" r="4"/>
+    <circle cx="1360" cy="780" r="4"/>
+    <circle cx="1140" cy="900" r="4"/>
+    <circle cx="900" cy="160" r="3.2"/>
+  </g>
+
+  <!-- ============ CONSTELLATION NODES (echoes the site's hero scene) ============ -->
+  <g fill="#e8ecf3">
+    <circle cx="150" cy="240" r="1.6" opacity="0.5"/>
+    <circle cx="410" cy="90" r="1.6" opacity="0.4"/>
+    <circle cx="640" cy="380" r="1.6" opacity="0.45"/>
+    <circle cx="230" cy="640" r="1.6" opacity="0.4"/>
+    <circle cx="1500" cy="120" r="1.6" opacity="0.45"/>
+    <circle cx="1750" cy="420" r="1.6" opacity="0.4"/>
+    <circle cx="1300" cy="640" r="1.6" opacity="0.4"/>
+    <circle cx="1680" cy="820" r="1.6" opacity="0.45"/>
+    <circle cx="980" cy="200" r="1.6" opacity="0.35"/>
+    <circle cx="1050" cy="850" r="1.6" opacity="0.4"/>
+  </g>
+  <g stroke="#8b96ac" stroke-width="0.6" opacity="0.25">
+    <line x1="150" y1="240" x2="410" y2="90"/>
+    <line x1="410" y1="90" x2="640" y2="380"/>
+    <line x1="150" y1="240" x2="230" y2="640"/>
+    <line x1="1500" y1="120" x2="1750" y2="420"/>
+    <line x1="1750" y1="420" x2="1300" y2="640"/>
+    <line x1="1300" y1="640" x2="1680" y2="820"/>
+  </g>
+
+  <!-- ============ FLOATING CODE GLYPHS ============ -->
+  <g font-family="'JetBrains Mono','Fira Code',monospace" font-weight="600">
+    <text x="150" y="410" font-size="46" fill="#00d9c0" opacity="0.22">{ }</text>
+    <text x="1620" y="560" font-size="52" fill="#7c6fe8" opacity="0.2">&lt;/&gt;</text>
+    <text x="360" y="760" font-size="40" fill="#ffb454" opacity="0.2">=&gt;</text>
+    <text x="1460" y="900" font-size="38" fill="#00d9c0" opacity="0.2">01</text>
+    <text x="80" y="960" font-size="34" fill="#7c6fe8" opacity="0.18">def</text>
+    <text x="1780" y="220" font-size="34" fill="#00d9c0" opacity="0.2">#!/</text>
+    <text x="900" y="980" font-size="30" fill="#ffb454" opacity="0.16">$_</text>
+    <text x="1820" y="700" font-size="30" fill="#7c6fe8" opacity="0.18">if()</text>
+    <text x="620" y="140" font-size="30" fill="#00d9c0" opacity="0.16">01</text>
+  </g>
+
+  <!-- ============ FINE SCANLINE TEXTURE ============ -->
+  <rect width="1920" height="1080" fill="url(#scan)"/>
+
+  <!-- ============ VIGNETTE ============ -->
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

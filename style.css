@@ -1,0 +1,905 @@
+/* ==========================================================
+   Design tokens
+   Palette:
+     --bg / --bg-elevated   near-black navy, the "board"
+     --circuit-cyan         primary signal / active state
+     --signal-violet        secondary accent
+     --amber                warm highlight (crypto / calls to action)
+     --text-primary/--text-muted
+   Type:
+     Display  -> "Space Grotesk"   (headings, geometric + technical)
+     Body     -> "Inter"           (paragraphs, readability)
+     Mono     -> "JetBrains Mono"  (eyebrows, badges, typed line, nav)
+========================================================== */
+:root {
+  --bg: #080b12;
+  --bg-elevated: #0f141e;
+  --bg-card: #121826;
+  --line: rgba(0, 217, 192, 0.14);
+  --line-strong: rgba(0, 217, 192, 0.35);
+  --circuit-cyan: #00d9c0;
+  --circuit-cyan-soft: rgba(0, 217, 192, 0.15);
+  --signal-violet: #7c6fe8;
+  --signal-violet-soft: rgba(124, 111, 232, 0.15);
+  --amber: #ffb454;
+  --amber-soft: rgba(255, 180, 84, 0.15);
+  --text-primary: #e8ecf3;
+  --text-muted: #8b96ac;
+  --text-faint: #565f72;
+  --code-bg-opacity: 0.05;
+  --glow-strong: rgba(0, 217, 192, 0.75);
+  --glow-soft: rgba(124, 111, 232, 0.5);
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* --- Light theme: same circuit-cyan identity, lifted onto a soft
+   "editor light mode" surface instead of the dark board. Colors are
+   deliberately muted (not stark white/pure black) to stay easy on
+   the eyes. --- */
+:root[data-theme="light"] {
+  --bg: #eef1f6;
+  --bg-elevated: #f8f9fc;
+  --bg-card: #fbfcfe;
+  --line: rgba(0, 148, 127, 0.14);
+  --line-strong: rgba(0, 148, 127, 0.36);
+  --circuit-cyan: #00947f;
+  --circuit-cyan-soft: rgba(0, 148, 127, 0.1);
+  --signal-violet: #5847c9;
+  --signal-violet-soft: rgba(88, 71, 201, 0.08);
+  --amber: #b8690f;
+  --amber-soft: rgba(184, 105, 15, 0.08);
+  --text-primary: #171c26;
+  --text-muted: #4b5768;
+  --text-faint: #6b7686;
+  --code-bg-opacity: 0.035;
+  --glow-strong: rgba(0, 148, 127, 0.35);
+  --glow-soft: rgba(88, 71, 201, 0.28);
+}
+
+body,
+body::before,
+body::after {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    opacity 0.4s ease;
+}
+
+/* Smooth, contained theme-switch transitions on interactive surfaces
+   (kept off `*` so it doesn't fight the tilt/parallax transforms) */
+.tilt-card,
+.btn-primary-3d,
+.btn-ghost-3d,
+.input-3d,
+.site-header,
+.site-footer,
+.nav-link,
+.theme-seg-btn,
+.lang-toggle,
+.lang-menu,
+#back-to-top {
+  transition-property:
+    background-color, border-color, color, box-shadow, transform, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* ==========================================================
+   Light-theme text-color corrections
+   Several headings/labels/icons use fixed Tailwind color
+   utilities (text-white, text-gray-300, etc.) tuned for the
+   dark board. In light mode these are remapped to legible,
+   theme-aware equivalents instead of washing out on a bright
+   background.
+========================================================== */
+:root[data-theme="light"] .text-white {
+  color: var(--text-primary);
+}
+:root[data-theme="light"] .text-gray-300 {
+  color: var(--text-muted);
+}
+:root[data-theme="light"] .text-gray-400 {
+  color: var(--text-muted);
+}
+:root[data-theme="light"] .text-gray-500 {
+  color: var(--text-faint);
+}
+:root[data-theme="light"] .text-cyan-300,
+:root[data-theme="light"] .nav-brand:hover {
+  color: var(--circuit-cyan);
+}
+:root[data-theme="light"] .text-cyan-400 {
+  color: #0e7490;
+}
+:root[data-theme="light"] .text-blue-400 {
+  color: #2563eb;
+}
+:root[data-theme="light"] .text-yellow-400 {
+  color: #a16207;
+}
+:root[data-theme="light"] .text-purple-400 {
+  color: #9333ea;
+}
+:root[data-theme="light"] .text-orange-400 {
+  color: #ea580c;
+}
+:root[data-theme="light"] .text-red-400 {
+  color: #dc2626;
+}
+:root[data-theme="light"] .text-indigo-400 {
+  color: #4f46e5;
+}
+:root[data-theme="light"] .text-green-400 {
+  color: #16a34a;
+}
+
+:root[data-theme="light"] .hover\:text-white:hover {
+  color: var(--text-primary);
+}
+:root[data-theme="light"] .hover\:text-cyan-300:hover {
+  color: var(--circuit-cyan);
+}
+:root[data-theme="light"] .hover\:text-red-400:hover {
+  color: #dc2626;
+}
+:root[data-theme="light"] .hover\:text-blue-400:hover {
+  color: #2563eb;
+}
+
+/* --- Base Styles --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  position: relative;
+  z-index: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.font-mono,
+.eyebrow,
+#typed-text,
+.nav-brand,
+.badge-mono {
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: var(--circuit-cyan);
+  color: #04110f;
+}
+
+/* -- Subtle circuit-grid backdrop, with a slow breathing pulse -- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    #000 40%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    #000 40%,
+    transparent 100%
+  );
+  opacity: 0.5;
+  animation: gridBreathe 9s ease-in-out infinite;
+}
+
+@keyframes gridBreathe {
+  0%,
+  100% {
+    opacity: 0.38;
+  }
+  50% {
+    opacity: 0.58;
+  }
+}
+
+/* -- Aurora: three soft color fields that slowly drift past one
+   another, giving the backdrop a living, non-static feel. -- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  background-image:
+    radial-gradient(circle, var(--signal-violet-soft), transparent 45%),
+    radial-gradient(circle, var(--circuit-cyan-soft), transparent 42%),
+    radial-gradient(circle, var(--amber-soft), transparent 45%);
+  background-repeat: no-repeat;
+  background-size:
+    65% 65%,
+    60% 60%,
+    65% 65%;
+  background-position:
+    15% 10%,
+    85% 25%,
+    50% 95%;
+  animation: auroraDrift 26s ease-in-out infinite alternate;
+}
+
+@keyframes auroraDrift {
+  0% {
+    background-position:
+      15% 10%,
+      85% 25%,
+      50% 95%;
+  }
+  50% {
+    background-position:
+      30% 35%,
+      68% 48%,
+      32% 72%;
+  }
+  100% {
+    background-position:
+      8% 28%,
+      92% 12%,
+      60% 88%;
+  }
+}
+
+/* -- Designed background artwork: a custom circuit/constellation
+   illustration matching the site's exact palette. Sits as the
+   base layer beneath the animated grid/aurora/canvas, and also
+   works as the automatic fallback when WebGL or motion is off. -- */
+.site-bg-image {
+  position: fixed;
+  inset: 0;
+  z-index: -6;
+  pointer-events: none;
+  background-image: url("assets/images/backgrounds/site-background.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.55;
+  transition: opacity 0.5s ease;
+}
+:root[data-theme="light"] .site-bg-image {
+  /* the artwork is drawn for the dark board; fade it out on the
+     light surface rather than showing a mismatched dark rectangle */
+  opacity: 0.05;
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-bg-image {
+    opacity: 0.75;
+  }
+  :root[data-theme="light"] .site-bg-image {
+    opacity: 0.08;
+  }
+}
+
+/* -- "Lines of code" texture: reinforces the programming-environment
+   feel site-wide. A very slow vertical drift makes it feel like a
+   distant, endlessly scrolling editor buffer. -- */
+.code-lines-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  pointer-events: none;
+  background-color: var(--text-faint);
+  opacity: var(--code-bg-opacity);
+  -webkit-mask-image: url("assets/images/backgrounds/code-pattern.svg");
+  mask-image: url("assets/images/backgrounds/code-pattern.svg");
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-size: 260px 260px;
+  mask-size: 260px 260px;
+  animation: codeDrift 70s linear infinite;
+}
+
+@keyframes codeDrift {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 0 -520px;
+    mask-position: 0 -520px;
+  }
+}
+
+/* -- Site-wide 3D layer: the constellation + code-glyph scene now
+   runs behind the entire page (not just the hero), at a lighter
+   density so text stays comfortably readable over it. -- */
+.site-canvas-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+#site-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after,
+  .code-lines-bg {
+    animation: none !important;
+  }
+}
+
+@font-face {
+  font-family: "FiraCode Nerd Font";
+  src:
+    url("FiraCodeNerdFont-Regular.woff2") format("woff2"),
+    url("FiraCodeNerdFont-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- Eyebrow labels (used above section headings) --- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--circuit-cyan);
+  margin-bottom: 0.75rem;
+}
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--circuit-cyan);
+  transform: rotate(45deg);
+  box-shadow: 0 0 12px var(--circuit-cyan);
+  flex-shrink: 0;
+}
+
+/* --- Scroll Reveal Animation --- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Circuit Divider (replaces plain gradient hr) --- */
+.divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--line-strong) 50%,
+    transparent 100%
+  );
+  margin: 4rem 0;
+  border: 0;
+}
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  background: var(--bg);
+  border: 1px solid var(--circuit-cyan);
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-shadow: 0 0 14px var(--circuit-cyan-soft);
+}
+
+/* --- Hero Title Styles --- */
+.hero-title-effect {
+  animation: pulse-shadow 3s infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
+  text-align: center;
+  font-weight: 700;
+}
+
+@keyframes pulse-shadow {
+  0% {
+    text-shadow: 0 0 5px var(--glow-strong);
+  }
+  50% {
+    text-shadow:
+      0 0 25px var(--glow-strong),
+      0 0 45px var(--glow-soft);
+  }
+  100% {
+    text-shadow: 0 0 5px var(--glow-strong);
+  }
+}
+
+/* --- Typing Cursor --- */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.25em;
+  background-color: var(--circuit-cyan);
+  margin-left: 4px;
+  animation: blink 0.7s infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- Mobile Menu --- */
+#mobile-menu {
+  transition: max-height 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+#mobile-menu.show {
+  max-height: 300px;
+}
+
+/* --- Back to Top Button --- */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--bg-card);
+  color: var(--circuit-cyan);
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) perspective(400px) rotateX(0deg);
+  transition:
+    opacity 0.3s,
+    visibility 0.3s,
+    transform 0.3s,
+    background-color 0.3s,
+    box-shadow 0.3s;
+  z-index: 1000;
+}
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) perspective(400px) rotateX(0deg);
+}
+#back-to-top:hover {
+  background-color: var(--circuit-cyan);
+  color: var(--bg);
+  transform: translateY(-4px) perspective(400px) rotateX(12deg);
+  box-shadow: 0 12px 24px -8px var(--circuit-cyan-soft);
+}
+
+/* --- Typing Text Container --- */
+#typed-text {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  font-weight: 500;
+  color: var(--circuit-cyan);
+  font-size: clamp(1rem, 4vw, 1.75rem);
+  vertical-align: bottom;
+}
+
+/* --- Fix Long Skill Titles (like "Cryptocurrency") --- */
+#skills h3 {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.3;
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+}
+
+/* ==========================================================
+   Hero ambient layer — the constellation canvas now lives at
+   the body level (.site-canvas-layer, see above) and runs
+   behind the whole page; this wrapper just hosts the hero's
+   pointer-following glow.
+========================================================== */
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    480px circle at var(--gx, 50%) var(--gy, 35%),
+    var(--circuit-cyan-soft),
+    transparent 65%
+  );
+  opacity: 0.9;
+  transition: opacity 0.4s ease;
+}
+.hero-3d-stage {
+  perspective: 1200px;
+}
+.hero-3d-layer {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ==========================================================
+   3D Tilt Cards
+   A single perspective-based depth system reused across
+   about / skills / projects / contact so the whole page
+   shares one consistent "surface with real depth" language.
+========================================================== */
+.tilt-wrap {
+  perspective: 1000px;
+}
+.tilt-card {
+  position: relative;
+  background-color: var(--bg-card);
+  border: 1px solid var(--line);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.3s ease-out,
+    border-color 0.3s ease-out;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+}
+.tilt-card:hover {
+  border-color: var(--line-strong);
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, 0.7),
+    0 0 40px -10px var(--circuit-cyan-soft);
+}
+.tilt-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.07),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.tilt-card:hover::before {
+  opacity: 1;
+}
+.tilt-card > * {
+  transform: translateZ(20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card,
+  #back-to-top {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* --- About / Contact panels sit on the tilt-card system --- */
+.panel-3d {
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+/* --- Linux Card Styles (now riding on the shared 3D system) --- */
+.linux-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  border-bottom: 3px solid var(--circuit-cyan);
+}
+.linux-card .icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  color: var(--circuit-cyan);
+}
+.linux-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+.linux-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* --- Generic skill / project card face --- */
+.skill-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.skill-card .icon-slot {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+.skill-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+.skill-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.project-card {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* --- Nav --- */
+.site-header {
+  background: rgba(8, 11, 18, 0.75);
+}
+.nav-link {
+  position: relative;
+  color: var(--text-muted);
+  transition: color 0.25s;
+}
+.nav-link:hover {
+  color: var(--circuit-cyan);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 4px;
+  height: 1px;
+  background: var(--circuit-cyan);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* --- Theme segmented control (Dark / Auto / Light) --- */
+.theme-segmented {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+}
+.theme-seg-btn {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+  transition:
+    background-color 0.25s,
+    color 0.25s,
+    box-shadow 0.25s,
+    transform 0.2s;
+}
+.theme-seg-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.theme-seg-btn:hover {
+  color: var(--text-primary);
+}
+.theme-seg-btn[aria-pressed="true"] {
+  background: var(--circuit-cyan);
+  color: #04110f;
+  box-shadow: 0 0 16px -3px var(--circuit-cyan-soft);
+  transform: scale(1.04);
+}
+:root[data-theme="light"] .theme-seg-btn[aria-pressed="true"] {
+  color: #fbfcfe;
+}
+.theme-segmented--sm .theme-seg-btn {
+  width: 28px;
+  height: 28px;
+}
+.theme-segmented--sm .theme-seg-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* --- Language switcher --- */
+.lang-switcher {
+  position: relative;
+}
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 42px;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+.lang-toggle:hover {
+  border-color: var(--line-strong);
+  box-shadow: 0 0 20px -6px var(--circuit-cyan-soft);
+}
+.lang-toggle svg {
+  width: 13px;
+  height: 13px;
+  transition: transform 0.25s ease;
+}
+.lang-switcher[data-open="true"] .lang-toggle svg {
+  transform: rotate(180deg);
+}
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 168px;
+  background: var(--bg-card);
+  border: 1px solid var(--line-strong);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 40px -16px rgba(0, 0, 0, 0.5);
+  padding: 0.4rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s;
+  z-index: 60;
+}
+.lang-switcher[data-open="true"] .lang-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.lang-option:hover {
+  background: var(--circuit-cyan-soft);
+  color: var(--text-primary);
+}
+.lang-option[aria-current="true"] {
+  color: var(--circuit-cyan);
+}
+.lang-option .code {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+}
+
+.lang-option-mobile {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+.lang-option-mobile[aria-current="true"] {
+  color: var(--circuit-cyan);
+  border-color: var(--line-strong);
+}
+
+/* --- Buttons --- */
+.btn-primary-3d {
+  background: linear-gradient(135deg, var(--circuit-cyan), #00a693);
+  color: #04110f;
+  box-shadow:
+    0 10px 25px -8px var(--circuit-cyan-soft),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.btn-primary-3d:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow:
+    0 16px 32px -10px var(--circuit-cyan-soft),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.btn-ghost-3d {
+  background: var(--bg-card);
+  border: 1px solid var(--line-strong);
+  color: var(--text-primary);
+}
+.btn-ghost-3d:hover {
+  transform: translateY(-3px) scale(1.03);
+  border-color: var(--circuit-cyan);
+  box-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Form fields --- */
+.input-3d {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  color: var(--text-primary);
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+.input-3d:focus {
+  outline: none;
+  border-color: var(--circuit-cyan);
+  box-shadow: 0 0 0 3px var(--circuit-cyan-soft);
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--line);
+}
